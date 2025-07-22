@@ -1085,6 +1085,9 @@ guillaume-gricourt:
 hvelab:
     name: Helena Vela
     joined: 2024-09
+    contact_for_training: true
+    affiliations:
+      - biont
 
 hannahkimincompbio:
     name: Hannah Kim
@@ -1340,6 +1343,7 @@ jkreplak:
 
 jochenblom:
     name: Jochen Blom
+    elixir_node: de
     joined: 2025-04
 
 joelvdavies:
@@ -1610,6 +1614,8 @@ lisanna:
     joined: 2023-09
     email: lisanna.paladin@gmail.com
     orcid: 0000-0003-0011-9397
+    elixir_node: de
+    contact_for_training: true
     affiliations:
       - elixir-europe
       - embl-ebi
@@ -1944,6 +1950,12 @@ mirelaminkova:
     joined: 2024-12
     affiliations:
       - surf
+
+mittler-works:
+    name: Nils Mittler
+    joined: 2025-06
+    affiliations:
+      - deKCD
 
 moffmade:
     name: Cory Maughmer
@@ -2526,6 +2538,12 @@ sanjaysrikakulam:
       - elixir-europe
       - eurosciencegateway
 
+santamccloud:
+    name: Santino Faack
+    joined: 2025-07
+    affiliations:
+      - uni-freiburg
+
 saramorsy:
     name: Sara Morsy
     joined: 2021-10
@@ -2618,6 +2636,9 @@ shiltemann:
 silviadg87:
     name: Silvia Di Giorgio
     joined: 2025-05
+    contact_for_training: true
+    affiliations:
+      - biont
 
 Shorla:
     name: Olushola Ogunkelu
