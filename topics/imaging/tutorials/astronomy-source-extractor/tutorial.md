@@ -37,7 +37,27 @@ tags:
 ---
 
 In astronomy and large-scale sky surveys, a key objective is to identify individual celestial bodies—such as stars and galaxies—in sky images to enable further detailed scientific analysis. For example, DESI Legacy Survey have "photographed" a third of the sky, whereas DESI is measuring spectra of individual galaxies selected from all the photometrically detected targets.
-The Galaxy source-extractor tool is based on SEP which is a Python library built from the core routines of SExtractor (Source Extractor), which is widely used in astronomy for detecting and measuring sources in astronomical images. 
+The Galaxy source-extractor tool is based on [SEP](https://sep.readthedocs.io/en/stable/index.html) which is a Python library built from the core routines of [SExtractor (Source Extractor)](https://www.astromatic.net/software/sextractor/), which is widely used in astronomy for detecting and measuring sources in astronomical images. 
+
+This tutorial will explain the data requirements for the tool, the main tool parameters and the output products of the tool. For more detailed instructions one can consult:
+-  [SEP documentation](https://sep.readthedocs.io/en/v1.0.x/index.html)
+-  [SEP paper](https://joss.theoj.org/papers/10.21105/joss.00058)
+-  [Source Extractor for Dummies](https://arxiv.org/abs/astro-ph/0512139)
+-  [Source Extractor paper](https://ui.adsabs.harvard.edu/abs/1996A%26AS..117..393B/abstract)
+-  [Source Extractor website](https://www.astromatic.net/software/sextractor/)
+
+
+> <agenda-title></agenda-title>
+>
+> In this tutorial, we will cover:
+>
+> 1. TOC
+> {:toc}
+>
+{: .agenda}
+
+
+## Background estimation and thresholding
 
 In order to detect sources, the background must be estimated and then all groups of pixels with a minimum area of
 ```markdown
@@ -59,31 +79,6 @@ In case
 err_option = none
 ```
 the value of ```thresh``` is use directly as an absolute threshold.
-
-This tutorial will explain the data requirements for the tool, the main tool parameters and the output products of the tool. For more detailed instructions one can consult: https://sep.readthedocs.io/en/v1.0.x/index.html, https://ui.adsabs.harvard.edu/abs/1996A%26AS..117..393B/abstract and https://www.astromatic.net/software/sextractor/ .
-
-### Application to bioimage analysis
-
-
-### Application to Earth Observation
-
-
-### Application to Astronomy
-
-![Sky image](../../images/voronoi-segmentation/sky_image_IMAGE.png "Sky image.")
-
-![Segmented sky image](../../images/voronoi-segmentation/sky_image_OVERLAY_VORONOI.png "Segmented sky image.")
-
-Thes original image is published by [Legacy Surveys / D. Lang (Perimeter Institute)](https://www.legacysurvey.org/acknowledgment/) and can be downloaded from the [official website](https://www.legacysurvey.org/viewer/jpeg-cutout?ra=53.16216667&dec=-27.79149167&layer=ls-dr10&pixscale=0.262&size=1200). The Legacy Surveys are described in {% cite legacy-survey-astronomy %}.
-
-> <agenda-title></agenda-title>
->
-> In this tutorial, we will cover:
->
-> 1. TOC
-> {:toc}
->
-{: .agenda}
 
 
 ## Data requirements 
@@ -150,4 +145,7 @@ Once the source-extractor tool is selected, you should select the input file nam
 
 ![Data and sources image](../../images/astronomy-source-extractor/source-extractor_data_sources_no_mask.png "Data and detected sources image.")
 
+The original image is published by [Legacy Surveys / D. Lang (Perimeter Institute)](https://www.legacysurvey.org/acknowledgment/). The Legacy Surveys are described in {% cite legacy-survey-astronomy %}.
+
 ![Background image](../../images/astronomy-source-extractor/source-extractor_background_no_mask.png "Background image.")
+
