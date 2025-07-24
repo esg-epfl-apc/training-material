@@ -149,3 +149,10 @@ The original image is published by [Legacy Surveys / D. Lang (Perimeter Institut
 
 ![Background image](../../images/astronomy-source-extractor/source-extractor_background_no_mask.png "Background image.")
 
+
+![Mask](../../images/astronomy-source-extractor/source-extractor-mask.png "Mask.")
+
+![Data and sources image with mask](../../images/astronomy-source-extractor/source-extractor_data_sources_with_mask.png "Data and detected sources image.")
+
+![Background image with mask](../../images/astronomy-source-extractor/source-extractor_background_with_mask.png "Background image.")
+
