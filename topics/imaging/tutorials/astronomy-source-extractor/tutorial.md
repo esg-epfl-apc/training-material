@@ -60,7 +60,14 @@ For more in-depth documentation, refer to:
 
 ## Background Estimation and Thresholding
 
-Before source detection, the tool estimates the image background. (TODO write a phrase on how this is done and about hte BW BH) It then identifies groups of pixels that exceed a defined brightness threshold.
+Before source detection, the tool estimates the image background. This is done by dividing the image into a grid of boxes, each with a default size of:
+``` python
+bw = 64  # box width in pixels
+bh = 64  # box height in pixels
+```
+Within each box, the pixel histogram is clipped to remove outliers, and the background level is estimated using a mode approximation based on the median and mean of the clipped pixel values. 
+
+After background estimation, the tool identifies groups of pixels that exceed a defined brightness threshold.
 
 Detection Criteria:
 
@@ -79,15 +86,15 @@ thresh * err[j,i]
 where:
 
 ``` python
-thresh = 1.5
-err_option = float_globalrms  # Uses the global RMS of the background
+thresh = 1.5 # default
 ```
 
-If:
+The interpretation of ```err[j,i]``` depends on the ```err_option``` parameter:
 ``` python
-err_option = none
+err_option = 'float_globalrms'  # Use global RMS of the background (default)
+err_option = 'array_rms'        # Use a pixel-wise RMS array of the background
+err_option = 'none'             # Use 'thresh' as an absolute threshold
 ```
-then ```thresh``` is treated as an absolute threshold (not scaled by error).
 
 ## Data Requirements 
 
@@ -213,5 +220,7 @@ Upload the mask to Galaxy, select it in the source-extractor tool, and re-run.
 
 One can observe that the central sources are now detected and also the background dynamic range has decreased, due to the mask.
 
+An important output of this tool is the segmentation map of the detected sources:
 ![Segmentation map with mask](../../images/astronomy-source-extractor/segmentation-map-with-mask.png "Segmentation map.")
 
+This map can be used as the seed image required by Voronoi segmentation (TODO put a link to this). In this case, one can observe that the two bright stars still have an important effect on the source detection, therefore better masking, using the array RMS as a relative error in thresholding or different background mesh sizes could be attempted to improve the results.
