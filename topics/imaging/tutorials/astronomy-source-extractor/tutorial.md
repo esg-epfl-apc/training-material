@@ -211,4 +211,7 @@ Upload the mask to Galaxy, select it in the source-extractor tool, and re-run.
 
 ![Background image with mask](../../images/astronomy-source-extractor/source-extractor_background_with_mask.png "Background image.")
 
+One can observe that the central sources are now detected and also the background dynamic range has decreased, due to the mask.
+
+![Segmentation map with mask](../../images/astronomy-source-extractor/segmentation-map-with-mask.png "Segmentation map.")
 
