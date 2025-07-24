@@ -127,11 +127,6 @@ and can be stored as shown in a text file.
 > 
 > 2. Run the {% tool [DESI Legacy Survey](toolshed.g2.bx.psu.edu/repos/astroteam/desi_legacy_survey_astro_tool/desi_legacy_survey_astro_tool/0.0.2+galaxy0) %} tool. 
 > 
->    ```
->    https://zenodo.org/records/15281843/files/images_and_seeds.zip
->    https://zenodo.org/records/15424465/files/image_and_seed.zip
->    ```
-> 
 >    - **Important:** Choose the Data Product **Image**.
 > 
 >    The default values are used for this tutorial.
