@@ -29,7 +29,7 @@ contributions:
   authorship:
     - Andrei-EPFL
   funding:
-    - fiesta
+    - esg
     - oscars
 tags:
 - imageanalysis
