@@ -122,6 +122,12 @@ embl-ebi:
     github: false
     ror: "02catss52"
 
+epfl:
+    short_name: EPFL
+    name: École Polytechnique Fédérale de Lausanne
+    url: https://www.epfl.ch
+    avatar: https://www.epfl.ch/about/overview/wp-content/themes/wp-theme-2018/assets/svg/epfl-logo.svg
+
 erasmusmc:
     short_name: ErasmusMC
     name: Erasmus Medical Center
