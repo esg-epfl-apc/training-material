@@ -29,8 +29,8 @@ contributions:
   authorship:
     - Andrei-EPFL
   funding:
-    - esg
     - oscars
+    - eurosciencegateway
 tags:
 - imageanalysis
 - astronomy
