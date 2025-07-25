@@ -187,6 +187,12 @@ andreasrichter:
     github: false
     joined: 2017-09
 
+Andrei-EPFL:
+    name: Andrei Variu
+    joined: 2025-07
+    affiliations:
+      - epfl
+
 andrewr:
     name: Andrew Rajczewski
     affiliations:
