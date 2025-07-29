@@ -1604,15 +1604,17 @@ lgallegovillar:
 
 lldelisle:
     name: Lucille Delisle
-    email: lucille.delisle@epfl.ch
+    email: lucille.delisle@unige.ch
     orcid: 0000-0002-1964-4960
     joined: 2019-08
     elixir_node: ch
+    matrix: 'lldelisle:matrix.org'
     contact_for_training: true
+    maintainer_contact: matrix
     location:
       country: CH
-      lat: 46.52
-      lon: 6.56
+      lat: 46.19
+      lon: 6.15
     affiliations:
       - elixir-europe
 
@@ -2801,6 +2803,11 @@ sunyi000:
     name: Yi Sun
     email: yi.sun@embl.de
     joined: 2021-03
+
+maulakhan:
+    name: Arif UI Maula Khan
+    email: arif.khan@embl.de
+    joined: 2025-07
 
 Swathi266:
     name: Swathi Nataraj
