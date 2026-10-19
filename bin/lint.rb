@@ -190,20 +190,26 @@ module Gtn
     # Consider:
     #
     #   [see this other tutorial({% link topics/admin/tutorials/ansible/tutorial.md %})
+    #
+    # A #fragment or ?query stays outside of the tag: ({% link topics/admin/tutorials/ansible/tutorial.md %}#some-heading)
     def self.link_gtn_tutorial_external(contents)
       find_matching_texts(
         contents,
         %r{\(https?://(training.galaxyproject.org|galaxyproject.github.io)/training-material/([^)]*)\)}
       )
+        # Slides links are handled by link_gtn_slides_external; two fixes on one link corrupt the auto-fix.
+        .reject { |_idx, _text, selected| selected[2][/\A[^#?]*/].end_with?('slides.html') }
         .map do |idx, _text, selected|
         # puts "#{idx} 0 #{selected[0]} 1 #{selected[1]} 2 #{selected[2]} 3 #{selected[3]}"
+        # The link tag only takes a path, so any #fragment or ?query stays outside of it.
+        target, suffix = selected[2].match(/\A([^#?]*)(.*)\z/).captures
         ReviewDogEmitter.error(
           path: @path,
           idx: idx,
           # We wrap the entire URL (inside the explicit () in a matching group to make it easy to select/replace)
           match_start: selected.begin(0) + 1,
           match_end: selected.end(0),
-          replacement: "{% link #{selected[2].gsub('.html', '.md')} %}",
+          replacement: "{% link #{target.gsub('.html', '.md')} %}#{suffix}",
           message: 'Please use the link function to link to other pages within the GTN. ' \
                    'It helps us ensure that all links are correct',
           code: 'GTN:003',
@@ -227,10 +233,12 @@ module Gtn
     # Consider:
     #
     #   [see this other tutorial({% link topics/admin/tutorials/ansible/slides.html %})
+    #
+    # A #fragment or ?query stays outside of the tag: ({% link topics/admin/tutorials/ansible/slides.html %}#some-slide)
     def self.link_gtn_slides_external(contents)
       find_matching_texts(
         contents,
-        %r{\((https?://(training.galaxyproject.org|galaxyproject.github.io)/training-material/(.*slides.html))\)}
+        %r{\((https?://(training.galaxyproject.org|galaxyproject.github.io)/training-material/(.*slides.html)([#?][^)]*)?)\)}
       )
         .map do |idx, _text, selected|
         ReviewDogEmitter.error(
@@ -238,7 +246,7 @@ module Gtn
           idx: idx,
           match_start: selected.begin(1),
           match_end: selected.end(1) + 1,
-          replacement: "{% link #{selected[3]} %}",
+          replacement: "{% link #{selected[3]} %}#{selected[4]}",
           message: 'Please use the link function to link to other pages within the GTN. ' \
                    'It helps us ensure that all links are correct',
           code: 'GTN:003',
@@ -1006,6 +1014,7 @@ module Gtn
             .gsub(/\s+/, ' ') # Collapse multiple whitespace for simplicity
             .gsub(/_includes\/cyoa-choices.html/, '').gsub(/%}$/, '') # Strip start/end
             .strip
+            .gsub(/"$/, '')
             .split('" ') # Split on the end of an option to get the individual option groups
             .map{|p| p.gsub(/="/, '=').split('=')}.to_h} # convert it into a convenient hash
       # NOTE: Errors on this line usually mean that folks have used ' instead of " in their CYOA.
@@ -1073,7 +1082,7 @@ module Gtn
               match_start: 0,
               match_end: 1,
               replacement: nil,
-              message: "We did not see a corresponding option# for the default: «#{branch['default']}», but this could have been written before we automatically slugified the options. If you like, please consider making your default option match the option text exactly.",
+              message: "The default could be replaced with an unslugified version, that is no longer necessary «#{branch['default']}»",
               code: 'GTN:043',
               fn: __method__.to_s,
             )
@@ -1219,7 +1228,7 @@ module Gtn
     end
 
     ##
-    # GTN:015, GTN:016, GTN:025, GTN:026, others.
+    # GTN:015, GTN:016, GTN:025, GTN:026, GTN:027 others.
     # These error messages indicate something is amiss with your workflow. Please consult the error message to correct it.
     def self.fix_ga_wf(contents)
       results = []
@@ -1229,7 +1238,8 @@ module Gtn
 
         results.push(ReviewDogEmitter.file_error(
                        path: @path, message: "This workflow is missing required tags. Please add `\"tags\": [\"#{topic}\"]`",
-                       code: 'GTN:015'
+                       code: 'GTN:015',
+                       fn: __method__.to_s,
                      ))
       end
 
@@ -1237,7 +1247,8 @@ module Gtn
         results.push(ReviewDogEmitter.file_error(
                        path: @path,
                        message: 'This workflow is missing an annotation. Please add `"annotation": "title of tutorial"`',
-                       code: 'GTN:016'
+                       code: 'GTN:016',
+                       fn: __method__.to_s,
                      ))
       end
 
@@ -1246,7 +1257,8 @@ module Gtn
                        path: @path,
                        message: 'This workflow is missing a license. Please select a valid OSI license. ' \
                                 'You can correct this in the Galaxy workflow editor.',
-                       code: 'GTN:026'
+                       code: 'GTN:026',
+                       fn: __method__.to_s,
                      ))
       end
 
@@ -1263,7 +1275,8 @@ module Gtn
               match_end: 0,
               replacement: nil,
               message: "A step in your workflow (#{step_id}) uses an invalid tool ID (#{id}) or a tool ID from the testtoolshed. These are not permitted in GTN tutorials. If this is in error, you can add it to the top of _plugins/utils.rb",
-              code: 'GTN:017'
+              code: 'GTN:017',
+              fn: __method__.to_s,
             )
           ]
         end
@@ -1602,19 +1615,25 @@ module Gtn
       enumerate_type(/:/).each do |path|
         format_reviewdog_output(
           ReviewDogEmitter.file_error(path: path,
-                                      message: 'There are colons in this filename, that is forbidden.', code: 'GTN:014')
+                                      message: 'There are colons in this filename, that is forbidden.',
+                                      code: 'GTN:014',
+                                      fn: __method__.to_s,
+                                     )
         )
       end
 
       enumerate_symlinks.each do |path|
         if !File.exist?(Pathname.new(path).realpath)
           format_reviewdog_output(
-            ReviewDogEmitter.file_error(path: path, message: 'This is a BAD symlink', code: 'GTN:013')
+            ReviewDogEmitter.file_error(path: path, message: 'This is a BAD symlink',
+                                        code: 'GTN:013',
+                                        fn: __method__.to_s)
           )
         end
       rescue StandardError
         format_reviewdog_output(
-          ReviewDogEmitter.file_error(path: path, message: 'This is a BAD symlink', code: 'GTN:013')
+          ReviewDogEmitter.file_error(path: path, message: 'This is a BAD symlink', code: 'GTN:013',
+                                      fn: __method__.to_s)
         )
       end
       enumerate_type(/data[_-]library.ya?ml/).each do |path|

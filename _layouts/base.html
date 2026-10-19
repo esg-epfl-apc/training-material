@@ -59,8 +59,14 @@
             {%- include _includes/material.jsonld material=page topic=topic site=site -%}
         </script>
         {%- endif -%}
+
+        <!-- fontawesome -->
+        <link href="{{site.baseurl}}/assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
+        <link href="{{site.baseurl}}/assets/fontawesome/css/brands.css" rel="stylesheet" />
+        <link href="{{site.baseurl}}/assets/fontawesome/css/solid.css" rel="stylesheet" />
+
     </head>
-    <body data-spy="scroll" data-target="#toc" data-brightness="auto" data-contrast="auto">
+    <body data-spy="scroll" data-target="#toc" data-brightness="auto" data-contrast="auto" data-baseurl="{{ site.baseurl }}">
         {{ 'theme' | load_bundle }}
         {% include _includes/default-header.html %}
         {% if topic.custom_css %}

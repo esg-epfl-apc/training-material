@@ -2,7 +2,7 @@
 layout: tutorial_hands_on
 
 title: "Clinical Metaproteomics 4: Quantitation"
-zenodo_link: "https://doi.org/10.5281/zenodo.10105821"
+zenodo_link: 'https://zenodo.org/record/10105821'
 questions:
 - How to perform quantitation?
 objectives:
@@ -33,6 +33,7 @@ follow_up_training:
 tags: [label-TMT11]
 redirect_from:
 - /topics/proteomics/tutorials/clinical-mp-quantitation/tutorial
+- /topics/microbiome/tutorials/clinical-mp-4-quantitation/tutorial
 
 recordings:
 - captioners:
@@ -46,7 +47,6 @@ recordings:
 ---
 
 
-# Introduction
 The next step of the clinical metaproteomics workflow is the quantification workflow. Running a quantification workflow in proteomics is essential for several critical purposes. It allows researchers to measure and compare the abundance of proteins or peptides in biological samples, offering valuable insights into biomarker discovery, comparative analysis, and differential expression studies. Quantitative proteomics helps reveal the functional roles of proteins, the stoichiometry of protein complexes, and the effects of drugs on protein expression in pharmacological studies. Additionally, it serves as a quality control measure, validating initial protein identifications, and providing data normalization for increased accuracy. Quantitative data are indispensable for hypothesis testing, systems biology, and their clinical relevance in areas such as disease diagnosis, prognosis, and therapeutic decision-making. In summary, the quantitation workflow in proteomics is a cornerstone for deciphering the complexities of protein expression and regulation, facilitating a wide array of biological and clinical applications.
 
 In this current workflow, we perform Quantification using the MaxQuant tool and the output will be interpreted in our next module.
@@ -185,13 +185,13 @@ The outputs we are most interested in consist of the `MaxQuant Evidence file`, `
 > 1. {% tool [Select](Grep1) %} with the following parameters:
 >    - {% icon param-file %} *"Select lines from"*: `proteinGroups` (output of **MaxQuant** {% icon tool %})
 >    - *"that"*: `NOT Matching`
->    - *"the pattern"*: `(_HUMAN)|(_REVERSED)|(CON)|(con)`
+>    - *"the pattern"*: `(_HUMAN)|(_REVERSED)|(REV_)|(CON)|(con)`
 >
 >
 > 2. {% tool [Select](Grep1) %} with the following parameters:
 >    - {% icon param-file %} *"Select lines from"*: `peptides` (output of **MaxQuant** {% icon tool %})
 >    - *"that"*: `NOT Matching`
->    - *"the pattern"*: `(_HUMAN)|(_REVERSED)|(CON)|(con)`
+>    - *"the pattern"*: `(_HUMAN)|(_REVERSED)|(REV_)|(CON)|(con)`
 >
 >
 > 3. {% tool [Cut](Cut1) %} with the following parameters:

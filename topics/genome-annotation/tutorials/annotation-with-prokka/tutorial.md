@@ -2,7 +2,7 @@
 layout: tutorial_hands_on
 
 title: "Genome annotation with Prokka"
-zenodo_link: "https://doi.org/10.5281/zenodo.1156405"
+zenodo_link: 'https://zenodo.org/record/1156405'
 tags:
   - gmod
   - prokaryote
@@ -20,10 +20,15 @@ level: Introductory
 key_points:
   - "Prokka is a useful tool to annotate a bacterial genome."
   - "JBrowse can be used to inspect the annotation of a genome."
-contributors:
-  - annasyme
-  - tseemann
-  - slugger70
+contributions:
+  authorship:
+    - annasyme
+    - tseemann
+    - slugger70
+  funding:
+    - unimelb
+    - melbournebioinformatics
+    - AustralianBioCommons
 subtopic: prokaryote
 edam_ontology:
 - topic_0622 # Genomics

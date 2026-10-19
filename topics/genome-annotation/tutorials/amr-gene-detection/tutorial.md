@@ -1,7 +1,7 @@
 ---
 layout: tutorial_hands_on
 title: Identification of AMR genes in an assembled bacterial genome
-zenodo_link: https://zenodo.org/record/10572227
+zenodo_link: 'https://zenodo.org/record/10572227'
 questions:
 - Which resistance genes are on a bacterial genome?
 - Where are the genes located on the genome?
@@ -40,10 +40,14 @@ contributions:
   - bazante1
   - shiltemann
   - miaomiaozhou88
+  - tflowers15
   funding:
   - avans-atgm
   - abromics
   - elixir-europe
+  - unimelb
+  - melbournebioinformatics
+  - AustralianBioCommons
 follow_up_training:
 - type: internal
   topic_name: visualisation
@@ -294,7 +298,7 @@ CARD can be very helpful to check all the resistance genes and check if it is lo
 > > <solution-title></solution-title>
 > >
 > > 1. [Methicillin resistant PBP2](https://card.mcmaster.ca/ontology/37589)
-> > 2. The strain we use is a Methicillin(multi) resistant Staphylococcus aureus. As `mecA` has a perfect resistome mach with *S. aureus*, and the AMR Gene Family is methicillin resistant PBP2, we expect to see mecA in MRSA.
+> > 2. The strain we use is a Methicillin(multi) resistant Staphylococcus aureus. As `mecA` has a perfect resistome match with *S. aureus*, and the AMR Gene Family is methicillin resistant PBP2, we expect to see mecA in MRSA.
 > > 3. No, these are completely unrelated. Unfortunately this is a **very** common issue in bioinformatics. Everyone builds their own numbering system for entries in their database (usually calling them 'accessions'), and then someone else needs to build a service to link these databases.
 > >
 > {: .solution}
@@ -302,7 +306,7 @@ CARD can be very helpful to check all the resistance genes and check if it is lo
 
 # Visualization of the ARGs and plasmid genes in their genomic context
 
-We would like to look at the ARGs and plasmid genes in their genomic context. To do that, we will usie [JBrowse](https://jbrowse.org/jb2/) ({% cite diesh2023jbrowse %}) with several information:
+We would like to look at the ARGs and plasmid genes in their genomic context. To do that, we will use [JBrowse](https://jbrowse.org/jb2/) ({% cite diesh2023jbrowse %}) with several information:
 
 1. Assembly as the reference
 2. ARGs location
@@ -443,11 +447,14 @@ To get information about the coverage of the contigs and genes, we map the reads
 >    {{ page.zenodo_link }}/files/DRR187559_after_fastp_1.fastq.gz
 >    {{ page.zenodo_link }}/files/DRR187559_after_fastp_2.fastq.gz
 >    ```
+>    
+> 2. Create a paired collection named `Paired Reads`
 >
-> 2. {% tool [Bowtie2](toolshed.g2.bx.psu.edu/repos/devteam/bowtie2/bowtie2/2.5.0+galaxy0) %} with the following parameters:
+>    {% snippet faqs/galaxy/collections_build_list_paired.md %}
+>
+> 3. {% tool [Bowtie2](toolshed.g2.bx.psu.edu/repos/devteam/bowtie2/bowtie2/2.5.4+galaxy0) %} with the following parameters:
 >    - *"Is this single or paired library"*: `Paired-end`
->        - {% icon param-file %} *"FASTA/Q file #1"*: `DRR187559_after_fastp_1.fastq.gz`
->        - {% icon param-file %} *"FASTA/Q file #2"*: `DRR187559_after_fastp_2.fastq.gz`
+>        - {% icon param-collection %} *"FASTQ Paired Dataset"*: `Paired Reads`
 >    - *"Will you select a reference genome from your history or use a built-in index?"*: `Use a genome from the history and build index`
 >        - {% icon param-file %} *"Select reference genome"*: Contig file
 >    - *"Save the bowtie2 mapping statistics to the history"*: `Yes`
@@ -498,6 +505,7 @@ We can now visualize the contigs, the mapping coverage, and the genes, using JBr
 >                    - *"Track Type"*: `BAM Pileups`
 >                        - {% icon param-file %} *"BAM Track Data"*: Bowtie2's output
 >                        - *"Autogenerate SNP Track"*: `Yes`
+>                        - *"Track Visibility"*: `On for new users`
 >
 > 3. View the output of JBrowse
 >
@@ -516,7 +524,7 @@ If it takes too long to build the JBrowse instance, you can view an embedded one
 >
 > > <solution-title></solution-title>
 > >
-> > 1. By zooming at the beginning of the contig, the name for rep16 is DUF536 domain-containing protein
+> > 1. By zooming at the beginning of the contig, the name for rep16 is Regulator of chromosome segregation-like C-terminal domain-containing protein
 > > 2. aac(6')-aph(2'') is on contig00019:20311..21749. The corresponding gene found by Bakta is bifunctional aminoglycoside N-acetyltransferase AAC(6')-Ie/aminoglycoside O-phosphotransferase APH(2'')-Ia. When clicking on it, we can find the dbxref attributes:
 > >   - NCBI Protein: WP_001028144.1
 > >   - UniRef: UniRef50_P0A0C2

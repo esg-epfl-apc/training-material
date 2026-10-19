@@ -2,7 +2,9 @@
 layout: tutorial_hands_on
 
 title: "Large genome assembly and polishing"
-zenodo_link: "https://doi.org/10.5281/zenodo.7055935"
+subtopic: hybrid-assembly
+zenodo_link: 'https://zenodo.org/record/7055935'
+
 tags:
   - assembly
   - polishing
@@ -25,8 +27,13 @@ key_points:
   - "We can assemble long reads from plant or animal species into large contigs"
   - "These contigs can be polished with both long and short reads"
   - "We can assess the quality of this assembly with various tools"
-contributors:
-  - annasyme
+contributions:
+  authorship:
+    - annasyme
+  funding:
+    - unimelb
+    - melbournebioinformatics
+    - AustralianBioCommons
 
 recordings:
 - youtube_id: BM70nvwWjOY

@@ -2,7 +2,7 @@
 name: "statistics"
 type: "use"
 topic_type: field
-title: "Statistics and machine learning"
+title: "Statistics and Machine Learning"
 summary: "Statistical Analyses for omics data and machine learning using Galaxy tools"
 docker_image: "quay.io/galaxy/statistics-training"
 edam_ontology: ["topic_2269"]
@@ -27,3 +27,6 @@ subtopics:
   - id: gai-llm
     title: "Generative Artificial Intelligence and Large Langage Model"
     description: "Tutorials covering the creation, pretraining, and applications of Generative Artificial Intelligence and Large Language Models."
+  - id: flexynesis
+    title: "Flexynesis - multi-omics Integration"
+    description: "Tutorials covering the integration of multi-omics data using advanced statistical and machine learning techniques with Flexynesis package."

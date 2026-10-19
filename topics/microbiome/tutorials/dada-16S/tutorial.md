@@ -1,7 +1,7 @@
 ---
 layout: tutorial_hands_on
 title: Building an amplicon sequence variant (ASV) table from 16S data using DADA2
-zenodo_link: https://doi.org/10.5281/zenodo.800651
+zenodo_link: 'https://zenodo.org/record/800651'
 questions:
 - What are the primary steps involved in generating an ASV table using DADA2 from
   16S rRNA gene sequencing data?
@@ -908,7 +908,7 @@ We will construct a simple sample table from the information encoded in the file
 >
 >    {% snippet faqs/galaxy/datasets_create_new_file.md name="header" format="tabular" %}
 >
-> 5. {% tool [Concatenate datasets](cat1) %} to add this header line to the **Replace Text** output:
+> 5. {% tool [Concatenate multiple datasets or collections](cat1) %} to add this header line to the **Replace Text** output:
 >    - {% icon param-file %} *"Concatenate Dataset"*: the `header` dataset
 >    - *"Dataset"*
 >       - {% icon param-repeat %} *"Insert Dataset"*

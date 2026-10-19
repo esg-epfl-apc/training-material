@@ -38,6 +38,7 @@ layout: base
     </ol>
   </nav>
   <h1 itemprop="name">{{page.title}}</h1>
+    <i>{{ page.description }}</i>
 
     {% if page.contributors %}
     <div class="contributors-line" style="font-size:1rem;">{{ locale['authors'] | default: "Authors" }}: {% include
@@ -46,11 +47,15 @@ layout: base
     <hr>
     {% endif %}
 
+    {% if page.contributions %}
+    <div class="contributors-line" style="font-size:1rem;">
+       {% include _includes/contributor-list2.html        contributors=page.contributions badge=true %} </div>
+    <hr>
+    {% endif %}
+
     <div class="container">
       <div class="row" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
         <div class="col-md-8" itemprop="text">
-           {{ page.description }}
-
 
            {{ content | fix_box_titles:page.lang,page.path | regex_replace: '<hr.*—<\/p>', '' }}
 

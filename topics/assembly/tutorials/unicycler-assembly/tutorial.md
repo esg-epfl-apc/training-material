@@ -2,7 +2,9 @@
 layout: tutorial_hands_on
 
 title: "Unicycler Assembly"
-zenodo_link: "https://doi.org/10.5281/zenodo.940733"
+subtopic: hybrid-assembly
+zenodo_link: 'https://zenodo.org/record/940733'
+
 level: Introductory
 tags:
   - prokaryote
@@ -31,10 +33,15 @@ key_points:
   - "We performed an hybrid assembly of a bacterial genome and its annotation"
   - "Unicycler is a pipeline bases on Spades and Pilon dedicated to hybrid assembly of Small genomes"
   - "Combination of short and long reads helped us produce an almost perfect assembly"
-contributors:
-  - nekrut
-  - delphine-l
-  - slugger70
+contributions:
+  authorship:
+    - nekrut
+    - delphine-l
+    - slugger70
+  funding:
+    - unimelb
+    - melbournebioinformatics
+    - AustralianBioCommons
 ---
 
 # The goal: *E. coli* C-1 assembly

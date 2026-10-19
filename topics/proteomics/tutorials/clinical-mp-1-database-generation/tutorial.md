@@ -2,7 +2,7 @@
 layout: tutorial_hands_on
 
 title: "Clinical Metaproteomics 1: Database-Generation"
-zenodo_link: "https://doi.org/10.5281/zenodo.10105821"
+zenodo_link: 'https://zenodo.org/record/10105821'
 questions:
 - Why do we need to generate a customized database for metaproteomics research?
 - How do we reduce the size of the database?
@@ -36,6 +36,7 @@ follow_up_training:
 tags: [label-TMT11]
 redirect_from:
 - /topics/proteomics/tutorials/clinical-mp-database-generation/tutorial
+- /topics/microbiome/tutorials/clinical-mp-1-database-generation/tutorial
 
 recordings:
 - captioners:
@@ -275,9 +276,9 @@ The compact MetaNovo-generated database (~1.9K sequences) will be merged with Hu
 >    - *"Run in batch mode?"*: `Merge individual FASTAs (output collection if input is collection)`
 >        - In *"Input FASTA File(s)"*:
 >            - {% icon param-repeat %} *"Insert Input FASTA File(s)"*
->                - {% icon param-file %} *"FASTA File"*: `MetaNovo Compact Database` (output of **MetaNovo** {% icon tool %})
 >                - {% icon param-file %} *"FASTA File"*: `Protein Database Human SwissProt` (output of **Protein Database Downloader** {% icon tool %})
 >                - {% icon param-file %} *"FASTA File"*: `Protein Database Contaminants (cRAP)` (output of **Protein Database Downloader** {% icon tool %})
+>                - {% icon param-file %} *"FASTA File"*: `MetaNovo Compact Database` (output of **MetaNovo** {% icon tool %})
 >
 >
 {: .hands_on}

@@ -1,7 +1,9 @@
 ---
 layout: tutorial_hands_on
 title: Assembly of the mitochondrial genome from PacBio HiFi reads
+subtopic: pacbio-assembly
 zenodo_link: https://zenodo.org/records/13345315
+
 questions:
 - How to assemble the mitochondrial genome from PacBio Hifi Reads
 objectives:
@@ -94,7 +96,7 @@ To assemble the mitogenome from our PacBio Data,  MitoHiFi needs a reference mit
 
 > <hands-on-title>  Find a related mitogenome reference  </hands-on-title>
 >
-> 1. {% tool [MitoHiFi](toolshed.g2.bx.psu.edu/repos/bgruening/mitohifi/mitohifi/3+galaxy0) %} with the following parameters:
+> 1. {% tool [MitoHiFi](toolshed.g2.bx.psu.edu/repos/bgruening/mitohifi/mitohifi/3.2.3+galaxy0) %} with the following parameters:
 >    - *"Operation type selector"*: `Find a close-related mitochondrial reference genome`
 >        - *"Species name"*: `Taeniopygia guttata` Enter the latin name of the species you are assembling
 >        - *"Email"*: `your.email@service.com` Enter your email 
@@ -112,7 +114,7 @@ To assemble the mitogenome from our PacBio Data,  MitoHiFi needs a reference mit
 >
 >    {% snippet faqs/galaxy/collections_build_list.md name="PacBio Reads" datasets_description="the fastq.gz containing the HiFi reads" n="1" %}
 > 
-> 2. {% tool [MitoHiFi](toolshed.g2.bx.psu.edu/repos/bgruening/mitohifi/mitohifi/3+galaxy0) %} with the following parameters:
+> 2. {% tool [MitoHiFi](toolshed.g2.bx.psu.edu/repos/bgruening/mitohifi/mitohifi/3.2.3+galaxy0) %} with the following parameters:
 >    - *"Operation type selector"*: `Run MitoHiFi`
 >        - *"Input mode"*: `Pacbio Hifi Reads`
 >            - {% icon param-collection %} *"Pacbio Hifi reads"*: `PacBio Reads` (Input dataset collection)

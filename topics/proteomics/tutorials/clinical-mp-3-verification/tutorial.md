@@ -2,7 +2,7 @@
 layout: tutorial_hands_on
 
 title: "Clinical Metaproteomics 3: Verification"
-zenodo_link: "https://doi.org/10.5281/zenodo.10105821"
+zenodo_link: 'https://zenodo.org/record/10105821'
 questions:
 - Why do we need to verify our identified peptides
 - What is the importance of making a new database for quantification
@@ -35,6 +35,7 @@ follow_up_training:
 tags: [label-TMT11]
 redirect_from:
 - /topics/proteomics/tutorials/clinical-mp-data-verification/tutorial
+- /topics/microbiome/tutorials/clinical-mp-3-verification/tutorial
 
 recordings:
 - captioners:
@@ -47,8 +48,6 @@ recordings:
   - katherine-d21
 ---
 
-
-# Introduction
 
 In proteomic research, the primary goal is to obtain accurate and meaningful insights into the proteome of a biological system. Verifying the presence of peptides or proteins is a critical step in achieving this goal, ensuring the quality and reliability of the data and the biological relevance of the findings. This tutorial is a sequel to the clinical metaproteomics discovery workflow. Once you have identified microbial peptides, the next step is to verify these peptides, for which we use PepQuery.
 

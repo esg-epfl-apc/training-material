@@ -2,7 +2,7 @@
 layout: tutorial_hands_on
 
 title: "Metaproteomics tutorial"
-zenodo_link: "https://doi.org/10.5281/zenodo.839701"
+zenodo_link: 'https://zenodo.org/record/839701'
 questions:
   - "How can I match metaproteomic mass spectrometry data to peptide sequences derived from shotgun metagenomic data?"
   - "How can I perform taxonomy analysis and visualize metaproteomics data?"
@@ -384,7 +384,7 @@ We do a taxonomy analysis using the UniPept pept2lca function to return the taxo
 
 > <hands-on-title>Unipept</hands-on-title>
 >
-> 1. {% tool [Unipept](toolshed.g2.bx.psu.edu/repos/galaxyp/unipept/unipept/4.3.0) %} with the following parameters:
+> 1. {% tool [Unipept](toolshed.g2.bx.psu.edu/repos/galaxyp/unipept/unipept/6.2.4+galaxy1) %} with the following parameters:
 >
 >    - **Unipept application**: `pept2lca: lowest common ancestor`
 >    - **Peptides input format**: `tabular`
@@ -554,7 +554,7 @@ for each protein.
 
 > <hands-on-title>Unipept</hands-on-title>
 >
-> 1. {% tool [Unipept](toolshed.g2.bx.psu.edu/repos/galaxyp/unipept/unipept/4.3.0) %} with the following parameters:
+> 1. {% tool [Unipept](toolshed.g2.bx.psu.edu/repos/galaxyp/unipept/unipept/6.2.4+galaxy1) %} with the following parameters:
 >
 >    - **Unipept application**: `pept2prot: UniProt entries containing a given tryptic peptide`
 >    - **retrieve extra information**: `Yes`

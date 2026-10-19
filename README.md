@@ -1,6 +1,8 @@
 <img src="./shared/images/GTNLogo1000.png" alt="GTN logo, a star on a coloured circle with the text Galaxy Training Network at an upward angle." width="400"  align="right" />
 
-# Galaxy Training Material [![Gitter](https://badges.gitter.im/Galaxy-Training-Network/training-material.svg)](https://gitter.im/Galaxy-Training-Network/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+# Galaxy Training Material 
+[![Deploy Website](https://github.com/galaxyproject/training-material/actions/workflows/deploy.yml/badge.svg)](https://github.com/galaxyproject/training-material/actions/workflows/deploy.yml) [![Matrix](https://img.shields.io/matrix/gtn:matrix.org)](https://matrix.to/#/#Galaxy-Training-Network_Lobby:gitter.im)
+
 
 This repository collects tutorials, slides, and exercises developed and maintained by the Galaxy community.
 
@@ -9,6 +11,8 @@ This repository collects tutorials, slides, and exercises developed and maintain
 The content of the material is developed in Markdown and a templating system ([Jekyll](http://jekyllrb.com/)) is used to format the tutorials and generate a website ([http://training.galaxyproject.org](http://training.galaxyproject.org)).
 
 Do you want to help with this project? Have a question? Please have a look at our [tutorials dedicating to training material development](https://training.galaxyproject.org/training-material/topics/contributing) and our [Contributing FAQs](https://training.galaxyproject.org/training-material/faqs/gtn/#contributors).
+
+New contributors can get started with our [onboarding learning pathway](https://training.galaxyproject.org/training-material/learning-pathways/onboarding-contributing.html).
 
 If you want to build the GTN website yourself, for example to preview your tutorial, please have a look at one of the following tutorials:
 - [Running the GTN website online using GitHub CodeSpaces](https://training.galaxyproject.org/training-material/topics/contributing/tutorials/running-codespaces/tutorial.html) (online, no installation required)

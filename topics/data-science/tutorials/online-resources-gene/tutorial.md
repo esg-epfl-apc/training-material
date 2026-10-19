@@ -3,7 +3,7 @@ layout: tutorial_hands_on
 title: Learning about one gene across biological resources and formats
 level: Introductory
 draft: true
-zenodo_link: https://zenodo.org/record/8304465
+zenodo_link: 'https://zenodo.org/record/8304465'
 questions:
 - How to employ bioinformatics resources to investigate a specific protein family (opsins)?
 - How to navigate the Genome Data Viewer to find opsins in the human genome?
@@ -27,6 +27,15 @@ contributions:
     - teresa-m
   funding:
     - biont
+lang: en
+tags:
+  - deutsch
+  - español
+  - italiano
+translations:
+  - de
+  - es
+  - it
 ---
 
 When we do a bioinformatics analysis, e.g. RNA-seq, we might end up with a list of gene names. We then need to explore these genes. But how can we do that? What are the resources available for that? And how to navigate through them?

@@ -2,7 +2,9 @@
 layout: tutorial_hands_on
 
 title: "An Introduction to Genome Assembly"
-zenodo_link: "https://doi.org/10.5281/zenodo.582600"
+subtopic: introduction
+zenodo_link: 'https://zenodo.org/record/582600'
+
 questions:
   - "How do we perform a very basic genome assembly from short read data?"
 objectives:
@@ -14,8 +16,13 @@ key_points:
   - "We assembled some Illumina fastq reads into contigs using a short read assembler called Velvet"
   - "We showed what effect one of the key assembly parameters, the k-mer size, has on the assembly"
   - "It looks as though there are some exploitable patterns in the metric data vs the k-mer size."
-contributors:
-  - slugger70
+contributions:
+  authorship:
+    - slugger70
+  funding:
+    - unimelb
+    - melbournebioinformatics
+    - AustralianBioCommons
 ---
 
 # Genome assembly with Velvet: Background

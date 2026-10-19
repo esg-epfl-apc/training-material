@@ -2,7 +2,7 @@
 layout: tutorial_hands_on
 
 title: Query an annotated mobile genetic element database to identify and annotate genetic elements (e.g. plasmids) in metagenomics data
-zenodo_link: 'https://zenodo.org/records/14501567'
+zenodo_link: 'https://zenodo.org/record/14501567'
 questions:
 - How can we use an existing database annotated database to identify and annotate genetic elements in metagenomics data?
 objectives:
@@ -641,7 +641,7 @@ We can now merge both files.
 
 > <hands-on-title>Concatenate the annotated and hypothetical protein gene files</hands-on-title>
 >
-> 1. {% tool [Concatenate datasets](cat1) %} with the following parameters:
+> 1. {% tool [Concatenate multiple datasets or collections](cat1) %} with the following parameters:
 >    - {% icon param-file %} *"Concatenate Dataset"*: output of **Add Header** {% icon tool %}
 >    - In *Dataset*:
 >      - {% icon param-file %} *"Select"*: output of last **Replace Text** {% icon tool %}

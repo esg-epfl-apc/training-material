@@ -2,7 +2,9 @@
 layout: tutorial_hands_on
 
 title: "Making sense of a newly assembled genome"
+subtopic: assembly-quality
 zenodo_link: https://zenodo.org/record/3382053
+
 requirements:
   -
     type: "internal"
@@ -767,7 +769,7 @@ Column 13 of the fields chosen by us for [LASTZ run](#hands-on-aligning-again) i
 >
 >    {% snippet faqs/galaxy/datasets_rename.md name="Query Alignments" %}
 >
-> 6. {% tool [Concatenate datasets tail-to-head](cat1) %}
+> 6. {% tool [Concatenate multiple datasets or collections](cat1) %}
 >    - *"Concatenate Dataset"*: `Query Alignments`
 >    - Click "Insert Dataset" button
 >    - *"1: Dataset"*: `Target Alignments`

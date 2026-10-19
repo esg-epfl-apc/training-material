@@ -1,7 +1,7 @@
 ---
 layout: tutorial_hands_on
 title: "Clinical Metaproteomics 5: Data Interpretation"
-zenodo_link: "https://doi.org/10.5281/zenodo.10105821"
+zenodo_link: 'https://zenodo.org/record/10105821'
 questions:
 - Why do we need to interpret the data?
 - Can we visualize the data?
@@ -35,6 +35,7 @@ follow_up_training:
 tags: [label-TMT11]
 redirect_from:
 - /topics/proteomics/tutorials/clinical-mp-data-interpretation/tutorial
+- /topics/microbiome/tutorials/clinical-mp-5-data-interpretation/tutorial
 
 recordings:
 - captioners:
@@ -141,7 +142,7 @@ Unipept serves as a vital bioinformatics platform for the analysis of mass spect
 > 1. {% tool [Select](Grep1) %} with the following parameters:
 >    - {% icon param-file %} *"Select lines from"*: `output` (Input dataset)
 >    - *"that"*: `NOT Matching`
->    - *"the pattern"*: `(HUMAN)|(REV)|(CON)|(con)`
+>    - *"the pattern"*: `(_HUMAN)|(_REVERSED)|(REV_)|(CON)|(con)`
 >    - *"Keep header line"*: `Yes`
 >
 >
@@ -152,7 +153,7 @@ Unipept serves as a vital bioinformatics platform for the analysis of mass spect
 >
 > 1. {% tool [Select](Grep1) %} with the following parameters:
 >    - {% icon param-file %} *"Select lines from"*: `output` (Input dataset)
->    - *"the pattern"*: `(HUMAN)`
+>    - *"the pattern"*: `(_HUMAN)`
 >    - *"Keep header line"*: `Yes`
 >
 >
@@ -163,7 +164,7 @@ Unipept serves as a vital bioinformatics platform for the analysis of mass spect
 > 1. {% tool [Select](Grep1) %} with the following parameters:
 >    - {% icon param-file %} *"Select lines from"*: `out_file1` (output of **Select** {% icon tool %})
 >    - *"that"*: `NOT Matching`
->    - *"the pattern"*: `(REV)|(con)`
+>    - *"the pattern"*: `(_REVERSED)|(REV_)|(CON)|(con)`
 >    - *"Keep header line"*: `Yes`
 >
 >

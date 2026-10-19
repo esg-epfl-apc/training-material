@@ -2,7 +2,7 @@
 layout: tutorial_hands_on
 
 title: Metabarcoding/eDNA through Obitools
-zenodo_link: https://zenodo.org/record/5932108
+zenodo_link: 'https://zenodo.org/record/5932108'
 questions:
 - how to analyze DNA metabarcoding / eDNA data produced on Illumina sequencers using the OBITools?
 objectives:
@@ -12,12 +12,12 @@ time_estimation: 1H
 key_points:
 - From raw reads you can process, clean and filter data to obtain a list of species from environmental DNA (eDNA) samples.
 tags:
-  - Genetic composition EBV class
-  - Community composition EBV class
+  - genetic composition EBV class
+  - community composition EBV class
   - EBV dataset
   - EBV workflow
   - eDNA
-  - Metabarcoding
+  - metabarcoding
   - biodiversity
 contributions:
   authorship:

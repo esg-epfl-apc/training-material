@@ -1,7 +1,7 @@
 ---
 layout: tutorial_hands_on
 title: Regional GAM
-zenodo_link: "https://zenodo.org/record/1324204"
+zenodo_link: 'https://zenodo.org/record/1324204'
 edam_ontology: ["topic_0610"]
 questions:
     - "What are abundance and trends of a butterfly species?"
@@ -15,17 +15,20 @@ key_points:
     - "We learned how to interpret a trend using modeling and data visualization"
     - "This tool compute phenology in order to predict missing data, no definitive conclusion can be made on the phenology using this tool"
 tags:
-   - Species populations EBV class
-   - Species traits EBV class
+   - species populations EBV class
+   - species traits EBV class
    - EBV dataset
    - EBV workflow
    - biodiversity
-contributors:
+contributions:
+  authorship:
     - claraurf
     - emichn
     - yvanlebras
     - bebatut
     - sbenateau
+  funding:
+    - mnhn
 
 subtopic: ecologyanalysis
 ---

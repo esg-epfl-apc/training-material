@@ -2,7 +2,7 @@
 layout: tutorial_hands_on
 
 title: "Breve introducción a Galaxy - en español"
-zenodo_link: "https://doi.org/10.5281/zenodo.582600"
+zenodo_link: 'https://zenodo.org/record/582600'
 level: Introductory
 questions:
   - "¿Cómo iniciar en Galaxy?"
@@ -24,10 +24,15 @@ key_points:
 lang: es
 translations:
   - en
-contributors:
-  - annasyme
-  - pclo
-  - ales-ibt
+contributions:
+  authorship:
+    - annasyme
+    - pclo
+    - ales-ibt
+  funding:
+    - unimelb
+    - melbournebioinformatics
+    - AustralianBioCommons
 
 ---
 

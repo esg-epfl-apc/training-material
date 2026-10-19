@@ -107,6 +107,10 @@ mapping:
         required: true
         description: |
             A brief description of the event.
+    google_form_id:
+        type: int
+        description: |
+            An internal ID tracking which form response generated this in the GTN Google Forms. Please do not add this manually.
     redirect_from:
         type: seq
         sequence:
@@ -117,7 +121,7 @@ mapping:
         - /topics/sequence-analysis/tutorials/de-novo-rad-seq/tutorial
     cover-image:
         type: str
-        pattern: /^\/.*(.png|.jpg|.jpeg)/
+        pattern: /^.*(.png|.jpg|.jpeg)/
         description: |
             link to a picture that will be used as the cover for the article
         _examples:
@@ -140,6 +144,17 @@ mapping:
             When the event ends
         _examples:
             - 2024-04-01
+    tags:
+        type: seq
+        sequence:
+            - type: str
+              required: true
+        description: |
+            A free form list of tags that are relevant for your event.
+        _examples:
+            - microbiome
+            - beginner friendly
+
     location:
         required: false
         description: |
@@ -166,7 +181,7 @@ mapping:
           region:
             type: str
           postcode:
-            type: str
+            type: any
           geo:
             type: map
             mapping:
@@ -177,7 +192,6 @@ mapping:
     cost:
         type: str
         required: true
-        pattern: /(free|\d+ [A-Z]{3})/
         description: |
             Price of the event. If the event is free, use the word `free`. If there is a cost, use the currency and amount.
         _examples:

@@ -3,7 +3,7 @@ layout: tutorial_hands_on
 title: Generating a single cell matrix using Alevin
 subtopic: single-cell-CS
 priority: 1
-zenodo_link: https://zenodo.org/record/4574153
+zenodo_link: 'https://zenodo.org/record/4574153'
 redirect_from:
 - "/topics/transcriptomics/tutorials/droplet-quantification-preprocessing/tutorial"
 - "/topics/transcriptomics/tutorials/scrna-case_alevin/tutorial"
@@ -192,7 +192,7 @@ Additionally, to map your reads, we have given you a transcriptome to align agai
 >
 {: .details}
 
-{% include _includes/cyoa-choices.html option1="Import History on EU server" option2="Zenodo" default="Import-History-on-EU-server"
+{% include _includes/cyoa-choices.html option1="Import History on EU server" option2="Zenodo" default="Import History on EU server"
        text="If you're on the EU server, (if your usegalaxy has an **EU** anywhere in the URL), then the quickest way to Get the Data for this tutorial is via importing a history. Otherwise, you can import from Zenodo." %}
 
 <div class="Import-History-on-EU-server" markdown="1">

@@ -1,7 +1,7 @@
 ---
 layout: tutorial_hands_on
 title: Quality Control
-zenodo_link: https://zenodo.org/records/61771
+zenodo_link: 'https://zenodo.org/record/61771'
 questions:
 - How to perform quality control of NGS raw data?
 - What are the quality parameters to check for a dataset?
@@ -27,6 +27,15 @@ key_points:
 - Check the impact of the quality control
 - Different tools are available to provide additional quality metrics
 - For paired-end reads analyze the forward and reverse reads together
+lang: en
+tags:
+  - deutsch
+  - español
+  - italiano
+translations:
+  - de
+  - es
+  - it
 contributions:
   authorship:
   - bebatut

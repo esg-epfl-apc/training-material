@@ -1,7 +1,9 @@
 ---
 layout: tutorial_hands_on
 title: Chloroplast genome assembly
-zenodo_link: https://doi.org/10.5281/zenodo.3567224
+subtopic: hybrid-assembly
+zenodo_link: 'https://zenodo.org/record/3567224'
+
 tags:
 - plants
 - nanopore
@@ -21,8 +23,13 @@ key_points:
 - We can map raw reads back to the assembly and investigate areas of high or low read
   coverage
 - We can view an assembly, its mapped reads, and its annotations in JBrowse
-contributors:
-- annasyme
+contributions:
+  authorship:
+    - annasyme
+  funding:
+    - unimelb
+    - melbournebioinformatics
+    - AustralianBioCommons
 recordings:
 - captioners:
   - annasyme
